@@ -9,7 +9,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-
   const MyApp({Key? key}) : super(key: key);
 
   @override
@@ -57,8 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   },
                   style: TextButton.styleFrom(primary: Colors.white, backgroundColor: Colors.blue),
-                  child: const Text('Back')
-              ),
+                  child: const Text('Back')),
             ],
             if (ip.isEmpty && isLoading) const Text('Loading...'),
             if (ip.isEmpty && !isLoading)
