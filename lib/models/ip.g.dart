@@ -31,11 +31,13 @@ class _$IpSerializer implements StructuredSerializer<Ip> {
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
+      // ignore: cast_nullable_to_non_nullable
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
         case 'ip':
+          // ignore: cast_nullable_to_non_nullable
           result.ip = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
       }
@@ -62,12 +64,14 @@ class _$Ip extends Ip {
   IpBuilder toBuilder() => new IpBuilder()..replace(this);
 
   @override
+  // ignore: avoid_equals_and_hash_code_on_mutable_classes
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Ip && ip == other.ip;
   }
 
   @override
+  // ignore: avoid_equals_and_hash_code_on_mutable_classes
   int get hashCode {
     return $jf($jc(0, ip.hashCode));
   }
